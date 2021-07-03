@@ -20,6 +20,7 @@ namespace Cook_Book.Models
         public virtual DbSet<Category> Categories { get; set; }
 
         public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -44,6 +45,13 @@ namespace Cook_Book.Models
             modelBuilder.Entity<Food>(entity =>
             {
                 entity.ToTable("Food");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("User");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });

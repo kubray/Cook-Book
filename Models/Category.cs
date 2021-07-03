@@ -5,9 +5,8 @@ using System.Collections.Generic;
 
 namespace Cook_Book.Models
 {
-    public partial class Category
+    public partial class Category : BaseDBModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

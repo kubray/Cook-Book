@@ -12,9 +12,9 @@
 <table class="table">
     <thead>
         <tr>
-<th>
-    
-</th>
+            <th>
+
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -26,26 +26,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (Food item in Model) {
-        <tr>
+        @foreach (Food item in Model)
+        {
+            <tr>
 
-            <td>
-                <img src="@item.Image" width="80" height="80" />
-               
-            </td>
+                <td>
+                    <img src="@item.Image" width="80" height="80" />
+                </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Detail)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+                <td style="vertical-align:middle !important;">
+
+                    <a asp-action="Details" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
+
+                   
+                </td>
+                <td style="vertical-align:middle !important;">
+                    @Html.DisplayFor(modelItem => item.Detail)
+                </td>
+                <td>
+                   
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

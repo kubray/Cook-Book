@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Cook_Book.Models
 {
-    public partial class Food
+    public partial class Food : BaseDBModel
     {
-        public int Id { get; set; }
+      
         public string Name { get; set; }
 
         public string Detail { get; set; }
@@ -15,5 +15,9 @@ namespace Cook_Book.Models
         public string Image { get; set; }
 
         public string Video { get; set; }
+        public string Recipe { get; set; }
+
+        public string TextColor { get; set; }
+        
     }
 }

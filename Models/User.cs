@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace Cook_Book.Models
 {
-	public partial class User
+	public partial class User : BaseDBModel
 	{
-		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public DateTime RegisterDate { get; set; }

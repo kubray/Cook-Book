@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,5 +20,11 @@ namespace Cook_Book.Models
 
         public string TextColor { get; set; }
         
+        // Database map'lemesıne gerek yok.
+        // Sadece ekranda göstermek ıçın ekledım.
+        [NotMapped]
+        public List<Comment> Comments { get; set; }
+
+             
     }
 }

@@ -20,14 +20,30 @@
 
     </dl>
 
-
+    <!-- Gömulu Youtube vıdeosu -->
     <div>
         <iframe width="500" height="300" src="//@Model.Video" frameborder="0" allowfullscreen></iframe>
     </div>
+
+    <!-- Yemek Tarıfı -->
     <div>
         @Html.Raw(Model.Recipe)
 
     </div>
+
+    <!-- Yorumlar -->
+    <h4>Comments</h4>
+    <div>
+        @foreach (var comment in Model.Comments)
+        {
+            <div>@comment.Text</div>
+
+            <div>@comment.CreateDate</div>
+            <div>-------------------</div>
+            
+      }
+    </div>
+
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

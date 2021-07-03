@@ -32,12 +32,16 @@ namespace Cook_Book.Controllers
                 return NotFound();
             }
 
-            var food = await _context.Foods
+            Food food = await _context.Foods
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (food == null)
             {
                 return NotFound();
             }
+
+            // İlgılı yemek tarıfının yorumları getırılır.
+            List<Comment> comments =  _context.Comments.Where(x => x.FoodId == id).ToList();
+            food.Comments = comments;
 
             return View(food);
         }

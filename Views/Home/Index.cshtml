@@ -3,24 +3,52 @@
 
 }
 
-<div>
+<div class="onion-background">
     <form method="get" action="@Url.Action("Search", "Foods")">
 
-        <div class="onion-background">
+        <div style=" display: flex; align-items: center; justify-content: center;">
 
+            <div style="display:block; padding:20px; vertical-align:middle; margin-top:200px;  height:100%;" >
 
-            <div >
-
-                <label for="search" style="height:50px !important; background-color:white;">Find Recipe</label>
-                <input type="text" name="search" id="search" style="height:50px !important; background-color:white;" />
-                <button type="submit" style="height:50px !important; background-color:white;"></button>
+                <!--<label for="search" style="height:30; width:300; !important; background-color:white;">Find Recipe</label>-->
+                <input type="text" name="search" id="search" style="height:50px !important; width:300px;;" />
+                <button type="submit" style="height:50px !important; width:100px; color:black; " class="btn1 btn-111">Ara</button>
 
             </div>
 
-
-
         </div>
+
+
     </form>
 </div>
 
+<body style="background-color:#FAEBD7;">
 
+    <!--https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox-->
+    <h4>Kategoriler</h4>
+    <div style="border: 1px solid gray; display: flex; align-items: center; justify-content:flex-start; padding:20px;">
+        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap:wrap;">
+            <img src="/images/anayemek.jpg" width="200" height="200">
+            <span style=" display:block; text-align:center;">Tatlı</span>
+        </div>
+
+        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap;">
+            <img src="/images/anayemek.jpg" width="200" height="200">
+            <span style=" display:block; text-align:center;">Tatlı</span>
+        </div>
+
+        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap; ">
+            <img src="/images/anayemek.jpg" width="200" height="200">
+            <span style=" display:block; text-align:center;">Tatlı</span>
+        </div>
+
+        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap; ">
+            <img src="/images/anayemek.jpg" width="200" height="200">
+            <span style=" display:block; text-align:center;">Tatlı</span>
+        </div>
+
+       
+
+    </div>
+
+</body>

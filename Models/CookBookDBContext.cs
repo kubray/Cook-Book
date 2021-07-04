@@ -24,6 +24,9 @@ namespace Cook_Book.Models
 
         public virtual DbSet<Comment> Comments { get; set; }
 
+
+        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -61,6 +64,13 @@ namespace Cook_Book.Models
             modelBuilder.Entity<Comment>(entity =>
             {
                 entity.ToTable("Comment");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<ApplicationUser>(entity =>
+            {
+                entity.ToTable("ApplicationUser");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });

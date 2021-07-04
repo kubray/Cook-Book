@@ -19,9 +19,9 @@ namespace Cook_Book.Controllers
         }
 
         // GET: Foods
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(String id = "1")
         {
-            return View(await _context.Foods.ToListAsync());
+            return View(await _context.Foods.Where(x => x.CategoryId  == Convert.ToInt32(id)).ToListAsync());
         }
 
         // GET: Foods/Details/5

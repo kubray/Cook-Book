@@ -1,4 +1,7 @@
-﻿@{
+﻿@model IEnumerable<Cook_Book.Models.Category>
+
+
+@{
     ViewData["Title"] = "Home Page";
 
 }
@@ -8,11 +11,13 @@
 
         <div style=" display: flex; align-items: center; justify-content: center;">
 
-            <div style="display:block; padding:20px; vertical-align:middle; margin-top:200px;  height:100%;" >
+            <div style="display:block; padding:20px; vertical-align:middle; margin-top:200px;  height:100%;">
 
                 <!--<label for="search" style="height:30; width:300; !important; background-color:white;">Find Recipe</label>-->
+                <h4>              Find Recipe   </h4>
                 <input type="text" name="search" id="search" style="height:50px !important; width:300px;;" />
                 <button type="submit" style="height:50px !important; width:100px; color:black; " class="btn1 btn-111">Ara</button>
+
 
             </div>
 
@@ -22,32 +27,44 @@
     </form>
 </div>
 
-<body style="background-color:#FAEBD7;">
+<body style="background-color:#FAEBD7;margin-top:50px;">
 
     <!--https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox-->
-    <h4>Kategoriler</h4>
-    <div style="border: 1px solid gray; display: flex; align-items: center; justify-content:flex-start; padding:20px;">
-        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap:wrap;">
-            <img src="/images/anayemek.jpg" width="200" height="200">
-            <span style=" display:block; text-align:center;">Tatlı</span>
-        </div>
+    <br />
+    <br />
+    <br />
+    <h4 style="font-size: 40px; font-family: verdana;">CATEGORIES</h4>
 
-        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap;">
-            <img src="/images/anayemek.jpg" width="200" height="200">
-            <span style=" display:block; text-align:center;">Tatlı</span>
-        </div>
+    <div style="border: 1px; background-color:white; display: flex; align-items: center; justify-content:flex-start; padding:20px;">
 
-        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap; ">
-            <img src="/images/anayemek.jpg" width="200" height="200">
-            <span style=" display:block; text-align:center;">Tatlı</span>
-        </div>
+        @if (Model != null)
+        {
+            @foreach (Category item in Model)
+            {
+                <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap;">
 
-        <div width="400" height="400" style="display: block; padding: 10px; text-align: center; flex-wrap: wrap; ">
-            <img src="/images/anayemek.jpg" width="200" height="200">
-            <span style=" display:block; text-align:center;">Tatlı</span>
-        </div>
+                    <img src="@item.Image" width="332" height="250">
 
-       
+
+
+
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Foods" asp-action="Index" asp-route-id="@item.Id">
+                        <span style=" display:block; text-align:center; font-family: 'Arial Rounded MT'; font-size:20px; ">
+                            @item.Name
+                        </span>
+                    </a>
+
+                </div>
+
+            }
+        }
+
+
+
+
+
+
+
 
     </div>
 

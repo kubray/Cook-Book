@@ -37,6 +37,8 @@ namespace Cook_Book
                 .AddEntityFrameworkStores<CookBookDBContext>();
             services.AddControllersWithViews();
 
+            services.AddSession();
+            
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
@@ -64,6 +66,10 @@ namespace Cook_Book
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
+            //app.add
+            
 
             app.UseAuthorization();
             app.UseAuthentication();

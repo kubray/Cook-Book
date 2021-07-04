@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Cook_Book.Models;
 using Microsoft.AspNetCore.Authorization;
 
+using Microsoft.AspNetCore.Http;
+
+
 namespace Cook_Book.Controllers
 {
     public class CommentsController : Controller
@@ -22,7 +25,19 @@ namespace Cook_Book.Controllers
         // GET: Comments
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Comments.ToListAsync());
+            
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("email"))){
+                //giriş yapmamış
+                //return View("/Views/Shared/Home/Index.cshtml");
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                //yapmış.
+                return View(await _context.Comments.ToListAsync());
+            }
+
+            
         }
 
         // GET: Comments/Details/5

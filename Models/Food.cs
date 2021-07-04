@@ -19,7 +19,7 @@ namespace Cook_Book.Models
         public string Recipe { get; set; }
 
         public string TextColor { get; set; }
-        
+        public int CategoryId { get; set; }
         // Database map'lemesıne gerek yok.
         // Sadece ekranda göstermek ıçın ekledım.
         [NotMapped]

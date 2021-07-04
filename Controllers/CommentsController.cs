@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cook_Book.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cook_Book.Controllers
 {
@@ -52,6 +53,7 @@ namespace Cook_Book.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Text,UserId,FoodId,Id,CreateDate,IsDeleted")] Comment comment)
         {
